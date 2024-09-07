@@ -1,5 +1,5 @@
 import express from 'express'
-import { updateUser } from '../controllers/userController.js';
+import { updateUser,deleteUser,getSingleUser,getAllUser } from '../controllers/userController.js';
 const router = express.Router()
 router.put("/:id", updateUser);
 //delete User
@@ -8,6 +8,7 @@ router.delete("/:id", deleteUser);
 router.get("/:id", getSingleUser);
 //getAll User
 router.get("/", getAllUser);
+
 
 
 
