@@ -32,7 +32,7 @@ if(!user){
     return res.status(404).json({success:false, message:'user not found'})
 }
 //if  exist and check password and mail 
-const checkCorrectpassword = bcrypt.compare(req.body.password,user.password)
+const checkCorrectpassword = await bcrypt.compare(req.body.password,user.password)
 
 
 if(!checkCorrectpassword){
@@ -42,14 +42,14 @@ const {password,role, ...rest}= user._doc
 
 //create jwt
 const token =jwt.sign({id:user._id,role:user.role,},process.env.JWT_SECRET_KEY,{expiresIn:"15d"});
-        //set tooken in the browser cookies and send the res to the client
+        //set token in the browser cookies and send the res to the client
 res.cookie('accessToken',token,{
     httpOnly:true,
     expires:token.expiresIn
-}).status(200).json({success:true, message:"successfully login", data:{...rest} })
+}).status(200).json({ token, data:{...rest}, role, })
     } catch (error) {
           res.status(500).json({success:false,message:'failed to login'})
     }
 }
 
-//59:57
+
