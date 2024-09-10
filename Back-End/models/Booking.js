@@ -4,7 +4,7 @@ const bookingSchema = new mongoose.Schema(
   {
     userId: {
       type: String,
-      ref: "Tour",
+    
     },
     username: {
       type: String,
@@ -30,7 +30,7 @@ const bookingSchema = new mongoose.Schema(
     required: true,
    },
    bookingAt : {
-    type:date,
+    type:Date,
     required: true,
    },
    
