@@ -3,6 +3,7 @@ import Review from '../models/Review.js'
 
 
 
+
 export const createReview=async(req,res)=>{
    const tourId=req.params.tourId
    const newReview = new Review ({...req.body})
@@ -19,5 +20,6 @@ export const createReview=async(req,res)=>{
         res.status(500).json({success:false, message:' failed to Review submitted'})
     }
 }
-//1:12:33
+
+
 

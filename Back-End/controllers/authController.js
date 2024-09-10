@@ -46,7 +46,7 @@ const token =jwt.sign({id:user._id,role:user.role,},process.env.JWT_SECRET_KEY,{
 res.cookie('accessToken',token,{
     httpOnly:true,
     expires:token.expiresIn
-}).status(200).json({ token, data:{...rest}, role, })
+}).status(200).json({ token, data:{...rest}, role, });
     } catch (error) {
           res.status(500).json({success:false,message:'failed to login'})
     }
