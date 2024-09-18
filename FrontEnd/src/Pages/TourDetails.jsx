@@ -5,6 +5,8 @@ import {useParams} from 'react-router-dom'
 import tourData from '../assets/data/tours.js'
 import calculateAvgRating from '../utils/avgRating'
 import avatar from '../assets/images/avatar.jpg'
+import Booking from '../components/Booking/Booking.jsx'
+import NewsLetter from '../Shared/NewsLetter.jsx'
   
 const TourDetails = () => {
   const {id}=useParams()
@@ -37,12 +39,13 @@ const TourDetails = () => {
         <img src={photo} alt="" />
         <div className="tour__info">
           <h2>{title}</h2>
-          <div className='d-flex align-items-center gap-5'>
+          < div className="d-flex align-items-center gap-5">
           <span className="tour__rating d-flex align-items-center gap-1"><i class="ri-star-s-fill" style={{color:"var(--secondary-color)"}}></i>{avgRating===0?null:avgRating}{totalRating===0?('Not Rated'):(          <span>{reviews?.length}</span>)
 }</span>
 <span>
 <i class="ri-map-pin-user-fill"></i>{address }
 </span>
+</div>
 <div>
   <div className="tour__extra-details">
     <span><i class="ri-map-pin-2-line"></i>{city}</span>
@@ -96,13 +99,17 @@ const TourDetails = () => {
   </ListGroup>
 </div>
 
-          </div>
+        
         </div>
       </div>
+      </Col>
+      <Col lg='4'>
+      <Booking tour={tour} avgRating={avgRating} />
       </Col>
     </Row>
   </Container>
 </section>
+<NewsLetter/>
 </>  )
 }
 

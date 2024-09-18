@@ -6,6 +6,7 @@ import Login from '../Pages/Login'
 import SerachResultList from '../Pages/SerachResultList'
 import Register from '../Pages/Register'
 import TourDetails from '../Pages/TourDetails'
+import ThankYou from '../Pages/ThankYou'
 
 const Router = () => {
   return (
@@ -14,8 +15,9 @@ const Router = () => {
         <Route path='/home' element={<Home/>}/>
         <Route path='/tours' element={<Tours/>}/>
         <Route path='/tour/:id' element={<TourDetails/>}/>
-        <Route path='/login' element={<Login/>}/>
+        <Route path='/Login' element={<Login/>}/>
         <Route path='/register' element={<Register/>}/>
+        <Route path='/thank-you' element={<ThankYou/>}/>
         <Route path='/tours/search' element={<SerachResultList/>}/>
         
         </Routes>
