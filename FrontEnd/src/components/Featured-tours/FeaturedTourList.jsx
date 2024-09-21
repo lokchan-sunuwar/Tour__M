@@ -5,8 +5,7 @@ import useFetch from '../../hooks/useFetch'
 import {BASE_URL} from '../../utils/config'
 const FeaturedTourList = () => {
   const {data:featuredTours,loading, error } = useFetch(`${BASE_URL}/tours/search/getFeaturedTours`)
-
-  console.log(featuredTours);
+  
   return (
    <>
 {
@@ -18,7 +17,7 @@ const FeaturedTourList = () => {
    {
     !loading && !error &&
    featuredTours?.map(tour=>(
-    <Col lg='3' className='mb-4'key={tour.id}><TourCard tour={tour}/></Col>
+    <Col lg='3' className='mb-4'key={tour._id}><TourCard tour={tour}/></Col>
    )
    )}
    </>

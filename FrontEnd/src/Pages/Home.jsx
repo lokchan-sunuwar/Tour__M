@@ -27,7 +27,7 @@ const Home = () => {
                   <img src={worldImg} alt="World Map" />
                 </div>
                 <h1>
-                  Travelling opens the door to creating <span className="highlight"></span>
+                  Travelling open the door to creating <span className="highlight"></span>
                 </h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum aut enim culpa ea autem tempore deserunt facere minus eum. Dolores fuga qui consequatur reiciendis libero quia? Ad, repellendus! Quasi, deserunt.</p>
               </div>

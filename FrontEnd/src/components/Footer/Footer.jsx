@@ -80,7 +80,7 @@ const Footer = () => {
                     <span><i class="ri-phone-line"></i></span>
                   phone:
                   </h6>
-                  <p className='mb-0'> 9808xxxx</p>
+                  <p className='mb-0'> 9808534622</p>
                   </ListGroupItem>
               
             </ListGroup>
